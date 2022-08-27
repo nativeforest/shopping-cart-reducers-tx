@@ -16,8 +16,8 @@ export type IshoppingReducer = {
   payload: number;
 }
 export type State = {
-  cart:Array<any>
-  products: Array<any>;
+  cart:Array<ProductInterface>
+  products: Array<ProductInterface>;
 }
 export interface shoppingReducer {
   type: ActionsTypes;
@@ -27,7 +27,7 @@ export interface ShoppingInitialState {
   products: Array<ProductInterface>;
   cart: Array<ProductInterface>;
 }
-interface ProductInterface {
+export interface ProductInterface {
   id: number;
   image: string;
   name: string;

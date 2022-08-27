@@ -1,6 +1,7 @@
 import { ACTIONS } from '@/actions/shopping.actions';
 import {
   CartActionType,
+  ProductInterface,
   ShoppingInitialState,
   shoppingReducer,
   State,
@@ -55,7 +56,7 @@ export function shoppingReducer(
   const { type, payload } = action;
   switch (type) {
     case ACTIONS.ADD_TO_CART: {
-      let addCartItem = state.products.find(
+      let addCartItem:ProductInterface | any = state.products.find(
         (product) => product.id === payload
       );
       return {
