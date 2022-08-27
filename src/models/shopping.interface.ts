@@ -5,6 +5,20 @@ export enum ActionsTypes {
   REMOVE_ALL_FROM_CART = 'REMOVE_ALL_FROM_CART',
   CLEAN_CART = 'CLEAN_CART',
 }
+export type CartActionType = {
+  type: ActionsTypes,
+  payload: number
+}
+
+
+export type IshoppingReducer = {
+  type: ActionsTypes;
+  payload: number;
+}
+export type State = {
+  cart:Array<any>
+  products: Array<any>;
+}
 export interface shoppingReducer {
   type: ActionsTypes;
   payload: number;

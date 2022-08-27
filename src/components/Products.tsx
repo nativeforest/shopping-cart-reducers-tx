@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import React, { useReducer }  from 'react';
 import {
   shoppingInitialState,
   shoppingReducer,
@@ -6,14 +6,14 @@ import {
 import { ActionsTypes } from '@/models/shopping.interface';
 
 const Products: React.FC = () => {
-  const addToCart = (id: number) => {
-    dispatch({ type: ActionsTypes.ADD_TO_CART, payload: id });
+  const [state, cartDispatch] = useReducer(shoppingReducer,shoppingInitialState);
+  const addToCart = async(id: number) => {
+    cartDispatch({ type: ActionsTypes.ADD_TO_CART, payload: id });
     console.log(id);
   };
   const deleteFromCart = () => {};
   const clearCart = () => {};
 
-  const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
   const { products } = state;
 
   return (

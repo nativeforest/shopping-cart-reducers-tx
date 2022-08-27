@@ -1,7 +1,9 @@
 import { ACTIONS } from '@/actions/shopping.actions';
 import {
+  CartActionType,
   ShoppingInitialState,
   shoppingReducer,
+  State,
 } from '@/models/shopping.interface';
 
 export const shoppingInitialState: ShoppingInitialState = {
@@ -48,8 +50,8 @@ export const shoppingInitialState: ShoppingInitialState = {
 
 export function shoppingReducer(
   state: ShoppingInitialState,
-  action: shoppingReducer
-) {
+  action: CartActionType
+):State {
   const { type, payload } = action;
   switch (type) {
     case ACTIONS.ADD_TO_CART: {
